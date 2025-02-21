@@ -51,19 +51,42 @@ class _HomePageState extends State<HomePage> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      IconButton(
-                        onPressed: () {},
-                        icon: Container(
-                          height: 50,
-                          width: 50,
-                          child: Icon(Icons.menu),
-                          decoration: BoxDecoration(
-                            color: Colors.lightBlueAccent,
-                            shape: BoxShape.circle,
-                          ),
+                      ElevatedButton(
+                        onPressed: (){
+                          print("search button pressed");
+                        },
+                        child: Icon(
+                            Icons.menu,
+                            color: Colors.black
+                        ),
+                        style: ElevatedButton.styleFrom(
+                          elevation: 0,
+                          shadowColor: Colors.transparent,
+                          backgroundColor: Colors.blue,
+                          foregroundColor: Colors.transparent,
+                          overlayColor: Colors.transparent,
+                          shape: CircleBorder(),
+                          padding: EdgeInsets.all(18),
                         ),
                       ),
-                      IconButton(onPressed: () {}, icon: Icon(Icons.search)),
+                      ElevatedButton(
+                        onPressed: (){
+                          print("search button pressed");
+                        },
+                        child: Icon(
+                            Icons.search,
+                            color: Colors.black
+                        ),
+                        style: ElevatedButton.styleFrom(
+                          elevation: 0,
+                          shadowColor: Colors.transparent,
+                          backgroundColor: Colors.blue,
+                          foregroundColor: Colors.transparent,
+                          overlayColor: Colors.transparent,
+                          shape: CircleBorder(),
+                          padding: EdgeInsets.all(18),
+                        ),
+                      ),
                     ],
                   ),
                 ),
@@ -92,37 +115,84 @@ class _HomePageState extends State<HomePage> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               ElevatedButton(
-                onPressed: null,
+                onPressed: (){
+                  print("home button pressed");
+                },
                 child: Icon(
                   Icons.home,
                   color: Colors.black
                 ),
-
+                style: ElevatedButton.styleFrom(
+                  elevation: 0,
+                  shadowColor: Colors.transparent,
+                  backgroundColor: Colors.transparent,
+                  foregroundColor: Colors.transparent,
+                  overlayColor: Colors.transparent,
+                ),
               ),
-              IconButton(
-                onPressed: () {
+              ElevatedButton(
+                onPressed: (){
                   print("search button pressed");
                 },
-                icon: Icon(Icons.search),
-
+                child: Icon(
+                    Icons.search,
+                    color: Colors.black
+                ),
+                style: ElevatedButton.styleFrom(
+                  elevation: 0,
+                  shadowColor: Colors.transparent,
+                  backgroundColor: Colors.transparent,
+                  foregroundColor: Colors.transparent,
+                  overlayColor: Colors.transparent,
+                ),
               ),
-              IconButton(
-                onPressed: () {
+              ElevatedButton(
+                onPressed: (){
                   print("add button pressed");
                 },
-                icon: Icon(Icons.add),
+                child: Icon(
+                    Icons.add,
+                    color: Colors.black
+                ),
+                style: ElevatedButton.styleFrom(
+                  elevation: 0,
+                  shadowColor: Colors.transparent,
+                  backgroundColor: Colors.transparent,
+                  foregroundColor: Colors.transparent,
+                  overlayColor: Colors.transparent,
+                ),
               ),
-              IconButton(
-                onPressed: () {
+              ElevatedButton(
+                onPressed: (){
                   print("favorite button pressed");
                 },
-                icon: Icon(Icons.favorite),
+                child: Icon(
+                    Icons.favorite,
+                    color: Colors.black
+                ),
+                style: ElevatedButton.styleFrom(
+                  elevation: 0,
+                  shadowColor: Colors.transparent,
+                  backgroundColor: Colors.transparent,
+                  foregroundColor: Colors.transparent,
+                  overlayColor: Colors.transparent,
+                ),
               ),
-              IconButton(
-                onPressed: () {
+              ElevatedButton(
+                onPressed: (){
                   print("person button pressed");
                 },
-                icon: Icon(Icons.person),
+                child: Icon(
+                    Icons.person,
+                    color: Colors.black
+                ),
+                style: ElevatedButton.styleFrom(
+                  elevation: 0,
+                  shadowColor: Colors.transparent,
+                  backgroundColor: Colors.transparent,
+                  foregroundColor: Colors.transparent,
+                  overlayColor: Colors.transparent,
+                ),
               ),
             ],
           ),
