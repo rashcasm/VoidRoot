@@ -17,7 +17,7 @@ const CbtAi = () => {
         
         // Call the API
         const apiKey = 'YOUR_API_KEY'; // Replace with your actual API key
-        const apiUrl = 'link'; // Replace with the actual API endpoint
+        const apiUrl = 'http://192.168.213.209:3000/chat'; // Replace with the actual API endpoint
 
         try {
             const response = await fetch(apiUrl, {
