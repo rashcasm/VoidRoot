@@ -50,15 +50,12 @@ class _HomePageState extends State<HomePage> {
                   padding: const EdgeInsets.all(8.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       ElevatedButton(
                         onPressed: (){
                           print("search button pressed");
                         },
-                        child: Icon(
-                            Icons.menu,
-                            color: Colors.black
-                        ),
                         style: ElevatedButton.styleFrom(
                           elevation: 0,
                           shadowColor: Colors.transparent,
@@ -67,16 +64,23 @@ class _HomePageState extends State<HomePage> {
                           overlayColor: Colors.transparent,
                           shape: CircleBorder(),
                           padding: EdgeInsets.all(18),
+                        ),
+                        child: Icon(
+                            Icons.menu,
+                            color: Colors.black
+                        ),
+                      ),
+                      Text(
+                        "EUNOIA",
+                        style: TextStyle(
+                          fontSize: 34,
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
                       ElevatedButton(
                         onPressed: (){
                           print("search button pressed");
                         },
-                        child: Icon(
-                            Icons.search,
-                            color: Colors.black
-                        ),
                         style: ElevatedButton.styleFrom(
                           elevation: 0,
                           shadowColor: Colors.transparent,
@@ -85,6 +89,10 @@ class _HomePageState extends State<HomePage> {
                           overlayColor: Colors.transparent,
                           shape: CircleBorder(),
                           padding: EdgeInsets.all(18),
+                        ),
+                        child: Icon(
+                            Icons.search,
+                            color: Colors.black
                         ),
                       ),
                     ],
@@ -118,80 +126,80 @@ class _HomePageState extends State<HomePage> {
                 onPressed: (){
                   print("home button pressed");
                 },
-                child: Icon(
-                  Icons.home,
-                  color: Colors.black
-                ),
                 style: ElevatedButton.styleFrom(
                   elevation: 0,
                   shadowColor: Colors.transparent,
                   backgroundColor: Colors.transparent,
                   foregroundColor: Colors.transparent,
                   overlayColor: Colors.transparent,
+                ),
+                child: Icon(
+                  Icons.home,
+                  color: Colors.black
                 ),
               ),
               ElevatedButton(
                 onPressed: (){
                   print("search button pressed");
                 },
-                child: Icon(
-                    Icons.search,
-                    color: Colors.black
-                ),
                 style: ElevatedButton.styleFrom(
                   elevation: 0,
                   shadowColor: Colors.transparent,
                   backgroundColor: Colors.transparent,
                   foregroundColor: Colors.transparent,
                   overlayColor: Colors.transparent,
+                ),
+                child: Icon(
+                    Icons.search,
+                    color: Colors.black
                 ),
               ),
               ElevatedButton(
                 onPressed: (){
                   print("add button pressed");
                 },
-                child: Icon(
-                    Icons.add,
-                    color: Colors.black
-                ),
                 style: ElevatedButton.styleFrom(
                   elevation: 0,
                   shadowColor: Colors.transparent,
                   backgroundColor: Colors.transparent,
                   foregroundColor: Colors.transparent,
                   overlayColor: Colors.transparent,
+                ),
+                child: Icon(
+                    Icons.add,
+                    color: Colors.black
                 ),
               ),
               ElevatedButton(
                 onPressed: (){
                   print("favorite button pressed");
                 },
-                child: Icon(
-                    Icons.favorite,
-                    color: Colors.black
-                ),
                 style: ElevatedButton.styleFrom(
                   elevation: 0,
                   shadowColor: Colors.transparent,
                   backgroundColor: Colors.transparent,
                   foregroundColor: Colors.transparent,
                   overlayColor: Colors.transparent,
+                ),
+                child: Icon(
+                    Icons.favorite,
+                    color: Colors.black
                 ),
               ),
               ElevatedButton(
                 onPressed: (){
                   print("person button pressed");
                 },
-                child: Icon(
-                    Icons.person,
-                    color: Colors.black
-                ),
                 style: ElevatedButton.styleFrom(
                   elevation: 0,
                   shadowColor: Colors.transparent,
                   backgroundColor: Colors.transparent,
                   foregroundColor: Colors.transparent,
                   overlayColor: Colors.transparent,
+                ),
+                child: Icon(
+                    Icons.person,
+                    color: Colors.black
                 ),
               ),
             ],
