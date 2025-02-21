@@ -38,73 +38,73 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SizedBox(
-        height: double.infinity,
-        width: double.infinity,
+      body: SafeArea(
         child: Stack(
           children: [
-            SafeArea(
-              child: Align(
-                alignment: Alignment.topCenter,
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      ElevatedButton(
-                        onPressed: (){
-                          print("search button pressed");
-                        },
-                        style: ElevatedButton.styleFrom(
-                          elevation: 0,
-                          shadowColor: Colors.transparent,
-                          backgroundColor: Colors.blue,
-                          foregroundColor: Colors.transparent,
-                          overlayColor: Colors.transparent,
-                          shape: CircleBorder(),
-                          padding: EdgeInsets.all(18),
-                        ),
-                        child: Icon(
-                            Icons.menu,
-                            color: Colors.black
-                        ),
-                      ),
-                      Text(
-                        "EUNOIA",
-                        style: TextStyle(
-                          fontSize: 34,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      ElevatedButton(
-                        onPressed: (){
-                          print("search button pressed");
-                        },
-                        style: ElevatedButton.styleFrom(
-                          elevation: 0,
-                          shadowColor: Colors.transparent,
-                          backgroundColor: Colors.blue,
-                          foregroundColor: Colors.transparent,
-                          overlayColor: Colors.transparent,
-                          shape: CircleBorder(),
-                          padding: EdgeInsets.all(18),
-                        ),
-                        child: Icon(
-                            Icons.search,
-                            color: Colors.black
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
+            TopBar(),
             bottom_appbar(),
           ],
         ),
       ),
     );
+  }
+
+  Align TopBar() {
+    return Align(
+              alignment: Alignment.topCenter,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    ElevatedButton(
+                      onPressed: (){
+                        print("search button pressed");
+                      },
+                      style: ElevatedButton.styleFrom(
+                        elevation: 0,
+                        shadowColor: Colors.transparent,
+                        backgroundColor: Colors.blue,
+                        foregroundColor: Colors.transparent,
+                        overlayColor: Colors.transparent,
+                        shape: CircleBorder(),
+                        padding: EdgeInsets.all(18),
+                      ),
+                      child: Icon(
+                          Icons.menu,
+                          color: Colors.black
+                      ),
+                    ),
+                    Text(
+                      "EUNOIA",
+                      style: TextStyle(
+                        fontSize: 34,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    ElevatedButton(
+                      onPressed: (){
+                        print("search button pressed");
+                      },
+                      style: ElevatedButton.styleFrom(
+                        elevation: 0,
+                        shadowColor: Colors.transparent,
+                        backgroundColor: Colors.blue,
+                        foregroundColor: Colors.transparent,
+                        overlayColor: Colors.transparent,
+                        shape: CircleBorder(),
+                        padding: EdgeInsets.all(18),
+                      ),
+                      child: Icon(
+                          Icons.search,
+                          color: Colors.black
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            );
   }
 
   Align bottom_appbar() {
