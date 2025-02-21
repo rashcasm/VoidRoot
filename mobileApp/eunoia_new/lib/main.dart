@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(
@@ -37,23 +38,37 @@ class HomePage extends StatelessWidget {
     final spacing = size.width * 0.1;
 
     return Scaffold(
-      backgroundColor: Colors.white,
-      body: SafeArea(
-        child: Column(
-          children: [
-            const TopAppBar(),
-            Expanded(
-              child: SingleChildScrollView(
-                child: Column(
-                  children: [
-                    _buildMainCard(size),
-                    _buildButtonGrid(buttonSize, spacing, context),
-                  ],
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [
+              Color(0x6667ffff),
+              Color(0x32772cef),
+            ],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
+        ),
+        child: SafeArea(
+          child: Column(
+            children: [
+              const TopAppBar(),
+              SizedBox(
+                height: size.height * 0.08,
+              ),
+              Expanded(
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      Block0(),
+                      _buildButtonGrid(buttonSize, spacing, context),
+                    ],
+                  ),
                 ),
               ),
-            ),
-            const BottomAppBar(),
-          ],
+              const BottomAppBar(),
+            ],
+          ),
         ),
       ),
     );
@@ -66,7 +81,7 @@ class HomePage extends StatelessWidget {
         height: 200,
         width: double.infinity,
         decoration: BoxDecoration(
-          color: Colors.lightBlueAccent,
+          color: Color(0x6667ffff),
           borderRadius: BorderRadius.circular(size.height * 0.02),
         ),
       ),
@@ -75,12 +90,12 @@ class HomePage extends StatelessWidget {
 
   Widget _buildButtonGrid(double buttonSize, double spacing, BuildContext context) {
     const buttonData = [
-      {'icon': 'flutter.svg', 'label': 'Flutter'},
-      {'icon': 'flutter.svg', 'label': 'Flutter'},
-      {'icon': 'flutter.svg', 'label': 'Flutter'},
-      {'icon': 'flutter.svg', 'label': 'Flutter'},
-      {'icon': 'flutter.svg', 'label': 'Flutter'},
-      {'icon': 'flutter.svg', 'label': 'Flutter'},
+      {'icon': 'flutter.svg', 'label': 'CBT-AI'},
+      {'icon': 'flutter.svg', 'label': 'CBT-Counsellor'},
+      {'icon': 'flutter.svg', 'label': ' Emotional\nAssessment'},
+      {'icon': 'flutter.svg', 'label': 'Mindfullness'},
+      {'icon': 'flutter.svg', 'label': 'Support near\n         me'},
+      {'icon': 'flutter.svg', 'label': '...'},
     ];
 
     return Padding(
@@ -146,6 +161,7 @@ class CustomIconButton extends StatelessWidget {
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             SvgPicture.asset(iconPath, width: 27.5),
             const SizedBox(height: 8),
@@ -193,7 +209,7 @@ class TopAppBar extends StatelessWidget {
       icon: Icon(icon),
       onPressed: onPressed,
       style: IconButton.styleFrom(
-        backgroundColor: Colors.blue,
+        backgroundColor: Color(0x50ffffff),
         padding: const EdgeInsets.all(18),
       ),
     );
@@ -218,7 +234,7 @@ class BottomAppBar extends StatelessWidget {
       child: Container(
         height: 60,
         decoration: BoxDecoration(
-          color: Colors.lightBlueAccent,
+          color: Color(0x50ffffff),
           borderRadius: BorderRadius.circular(25),
         ),
         child: Row(
@@ -230,6 +246,124 @@ class BottomAppBar extends StatelessWidget {
             );
           }).toList(),
         ),
+      ),
+    );
+  }
+}
+
+class Block0 extends StatefulWidget {
+  const Block0({super.key});
+
+  @override
+  State<Block0> createState() => _Block0State();
+}
+
+class _Block0State extends State<Block0> {
+  @override
+  Widget build(BuildContext context) {
+
+    var standardHeight = MediaQuery.of(context).size.height;
+    var standardWidth = MediaQuery.of(context).size.width;
+
+    return SizedBox(
+      height: standardHeight * 0.28,
+      child: ListView(
+        children: [
+          CarouselSlider(
+            items:[
+              Padding(
+                padding: const EdgeInsets.only(left: 20, right: 20),
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: const Color(0xff6734d8),
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(20),
+                    child: Image.asset(
+                      "assets/Block 0 Images/A1.jpg",
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 20, right: 20),
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: const Color(0xff6734d8),
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(20),
+                    child: Image.asset(
+                      "assets/Block 0 Images/A2.jpg",
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 20, right: 20),
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: const Color(0xff6734d8),
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(20),
+                    child: Image.asset(
+                      "assets/Block 0 Images/A3.jpg",
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 20, right: 20),
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: const Color(0xff6734d8),
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(20),
+                    child: Image.asset(
+                      "assets/Block 0 Images/A4.jpg",
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 20, right: 20),
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: const Color(0xff6734d8),
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(20),
+                    child: Image.asset(
+                      "assets/Block 0 Images/A5.jpg",
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+              ),
+            ],
+            options: CarouselOptions(
+              height: standardHeight * 0.28,
+              viewportFraction: 1,
+              initialPage: 0,
+              autoPlay: true,
+              autoPlayInterval: const Duration(seconds: 6),
+              autoPlayAnimationDuration: const Duration(milliseconds: 300),
+              autoPlayCurve: Curves.fastOutSlowIn,
+              scrollDirection: Axis.horizontal,
+            ),
+          ),
+        ]
       ),
     );
   }
