@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_svg/svg.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(
@@ -37,11 +38,40 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
+
+    var standardHeight = MediaQuery.of(context).size.height;
+    var standardWidth = MediaQuery.of(context).size.width;
+
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: Stack(
           children: [
             TopBar(),
+            Padding(
+              padding: const EdgeInsets.only(top: 100),
+              child: Column(
+                children: [
+                  Align(
+                    alignment: Alignment.center,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Container(
+                        height: 200,
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          color: Colors.blue,
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(standardHeight * 0.02),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Midbuttons(standardHeight, context, standardWidth),
+                ],
+              ),
+            ),
             bottom_appbar(),
           ],
         ),
@@ -49,62 +79,394 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
+  Align Midbuttons(double standardHeight, BuildContext context, double standardWidth) {
+    return Align(
+      alignment: Alignment.topCenter,
+      child: Column(
+        children: [
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              SizedBox(height: standardHeight * 0.1),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  ElevatedButton(
+                    onPressed: (){
+                      print("Button1");
+                    },
+                    style: ElevatedButton.styleFrom(
+                      elevation: 0,
+                      shadowColor: Colors.transparent,
+                      backgroundColor: Colors.green,
+                      foregroundColor: Colors.transparent,
+                      overlayColor: Colors.transparent,
+                      padding: EdgeInsets.all(0),
+                    ),
+                    child: Container(
+                      height: standardHeight * 0.10,
+                      width: standardHeight * 0.10,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(standardHeight * 0.02),
+                        ),
+                        color: Theme.of(context).colorScheme.onTertiary,
+                        boxShadow: [
+                          BoxShadow(
+                            color: Theme.of(context).colorScheme.tertiary.withOpacity(0.1),
+                            blurRadius: 5,
+                            spreadRadius: 1,
+                          ),
+                        ],
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          SizedBox(height: standardHeight * 0.01),
+                          SvgPicture.asset(
+                            'assets/svg/raw/flutter.svg',
+                            width: 27.5,
+                          ),
+                          SizedBox(height: standardHeight * 0.01),
+                          Text(
+                            'Flutter',
+                            style: TextStyle(
+                              color: Theme.of(context).colorScheme.secondary,
+                              fontSize: standardHeight * 0.015,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  SizedBox(width: standardWidth * 0.1),
+                  ElevatedButton(
+                    onPressed: (){
+                      print("Button1");
+                    },
+                    style: ElevatedButton.styleFrom(
+                      elevation: 0,
+                      shadowColor: Colors.transparent,
+                      backgroundColor: Colors.green,
+                      foregroundColor: Colors.transparent,
+                      overlayColor: Colors.transparent,
+                      padding: EdgeInsets.all(0),
+                    ),
+                    child: Container(
+                      height: standardHeight * 0.10,
+                      width: standardHeight * 0.10,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(standardHeight * 0.02),
+                        ),
+                        color: Theme.of(context).colorScheme.onTertiary,
+                        boxShadow: [
+                          BoxShadow(
+                            color: Theme.of(context).colorScheme.tertiary.withOpacity(0.1),
+                            blurRadius: 5,
+                            spreadRadius: 1,
+                          ),
+                        ],
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          SizedBox(height: standardHeight * 0.01),
+                          SvgPicture.asset(
+                            'assets/svg/raw/flutter.svg',
+                            width: 27.5,
+                          ),
+                          SizedBox(height: standardHeight * 0.01),
+                          Text(
+                            'Flutter',
+                            style: TextStyle(
+                              color: Theme.of(context).colorScheme.secondary,
+                              fontSize: standardHeight * 0.015,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+
+                  SizedBox(width: standardWidth * 0.1),
+                  ElevatedButton(
+                    onPressed: (){
+                      print("Button1");
+                    },
+                    style: ElevatedButton.styleFrom(
+                      elevation: 0,
+                      shadowColor: Colors.transparent,
+                      backgroundColor: Colors.green,
+                      foregroundColor: Colors.transparent,
+                      overlayColor: Colors.transparent,
+                      padding: EdgeInsets.all(0),
+                    ),
+                    child: Container(
+                      height: standardHeight * 0.10,
+                      width: standardHeight * 0.10,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(standardHeight * 0.02),
+                        ),
+                        color: Theme.of(context).colorScheme.onTertiary,
+                        boxShadow: [
+                          BoxShadow(
+                            color: Theme.of(context).colorScheme.tertiary.withOpacity(0.1),
+                            blurRadius: 5,
+                            spreadRadius: 1,
+                          ),
+                        ],
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          SizedBox(height: standardHeight * 0.01),
+                          SvgPicture.asset(
+                            'assets/svg/raw/flutter.svg',
+                            width: 27.5,
+                          ),
+                          SizedBox(height: standardHeight * 0.01),
+                          Text(
+                            'Flutter',
+                            style: TextStyle(
+                              color: Theme.of(context).colorScheme.secondary,
+                              fontSize: standardHeight * 0.015,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: standardWidth * 0.1),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  ElevatedButton(
+                    onPressed: (){
+                      print("Button1");
+                    },
+                    style: ElevatedButton.styleFrom(
+                      elevation: 0,
+                      shadowColor: Colors.transparent,
+                      backgroundColor: Colors.green,
+                      foregroundColor: Colors.transparent,
+                      overlayColor: Colors.transparent,
+                      padding: EdgeInsets.all(0),
+                    ),
+                    child: Container(
+                      height: standardHeight * 0.10,
+                      width: standardHeight * 0.10,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(standardHeight * 0.02),
+                        ),
+                        color: Theme.of(context).colorScheme.onTertiary,
+                        boxShadow: [
+                          BoxShadow(
+                            color: Theme.of(context).colorScheme.tertiary.withOpacity(0.1),
+                            blurRadius: 5,
+                            spreadRadius: 1,
+                          ),
+                        ],
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          SizedBox(height: standardHeight * 0.01),
+                          SvgPicture.asset(
+                            'assets/svg/raw/flutter.svg',
+                            width: 27.5,
+                          ),
+                          SizedBox(height: standardHeight * 0.01),
+                          Text(
+                            'Flutter',
+                            style: TextStyle(
+                              color: Theme.of(context).colorScheme.secondary,
+                              fontSize: standardHeight * 0.015,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  SizedBox(width: standardWidth * 0.1),
+                  ElevatedButton(
+                    onPressed: (){
+                      print("Button1");
+                    },
+                    style: ElevatedButton.styleFrom(
+                      elevation: 0,
+                      shadowColor: Colors.transparent,
+                      backgroundColor: Colors.green,
+                      foregroundColor: Colors.transparent,
+                      overlayColor: Colors.transparent,
+                      padding: EdgeInsets.all(0),
+                    ),
+                    child: Container(
+                      height: standardHeight * 0.10,
+                      width: standardHeight * 0.10,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(standardHeight * 0.02),
+                        ),
+                        color: Theme.of(context).colorScheme.onTertiary,
+                        boxShadow: [
+                          BoxShadow(
+                            color: Theme.of(context).colorScheme.tertiary.withOpacity(0.1),
+                            blurRadius: 5,
+                            spreadRadius: 1,
+                          ),
+                        ],
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          SizedBox(height: standardHeight * 0.01),
+                          SvgPicture.asset(
+                            'assets/svg/raw/flutter.svg',
+                            width: 27.5,
+                          ),
+                          SizedBox(height: standardHeight * 0.01),
+                          Text(
+                            'Flutter',
+                            style: TextStyle(
+                              color: Theme.of(context).colorScheme.secondary,
+                              fontSize: standardHeight * 0.015,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  SizedBox(width: standardWidth * 0.1),
+                  ElevatedButton(
+                    onPressed: (){
+                      print("Button1");
+                    },
+                    style: ElevatedButton.styleFrom(
+                      elevation: 0,
+                      shadowColor: Colors.transparent,
+                      backgroundColor: Colors.green,
+                      foregroundColor: Colors.transparent,
+                      overlayColor: Colors.transparent,
+                      padding: EdgeInsets.all(0),
+                    ),
+                    child: Container(
+                      height: standardHeight * 0.10,
+                      width: standardHeight * 0.10,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(standardHeight * 0.02),
+                        ),
+                        color: Theme.of(context).colorScheme.onTertiary,
+                        boxShadow: [
+                          BoxShadow(
+                            color: Theme.of(context).colorScheme.tertiary.withOpacity(0.1),
+                            blurRadius: 5,
+                            spreadRadius: 1,
+                          ),
+                        ],
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          SizedBox(height: standardHeight * 0.01),
+                          SvgPicture.asset(
+                            'assets/svg/raw/flutter.svg',
+                            width: 27.5,
+                          ),
+                          SizedBox(height: standardHeight * 0.01),
+                          Text(
+                            'Flutter',
+                            style: TextStyle(
+                              color: Theme.of(context).colorScheme.secondary,
+                              fontSize: standardHeight * 0.015,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              )
+            ],
+          ),
+        ],
+      )
+    );
+  }
   Align TopBar() {
     return Align(
-              alignment: Alignment.topCenter,
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    ElevatedButton(
-                      onPressed: (){
-                        print("search button pressed");
-                      },
-                      style: ElevatedButton.styleFrom(
-                        elevation: 0,
-                        shadowColor: Colors.transparent,
-                        backgroundColor: Colors.blue,
-                        foregroundColor: Colors.transparent,
-                        overlayColor: Colors.transparent,
-                        shape: CircleBorder(),
-                        padding: EdgeInsets.all(18),
-                      ),
-                      child: Icon(
-                          Icons.menu,
-                          color: Colors.black
-                      ),
-                    ),
-                    Text(
-                      "EUNOIA",
-                      style: TextStyle(
-                        fontSize: 34,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    ElevatedButton(
-                      onPressed: (){
-                        print("search button pressed");
-                      },
-                      style: ElevatedButton.styleFrom(
-                        elevation: 0,
-                        shadowColor: Colors.transparent,
-                        backgroundColor: Colors.blue,
-                        foregroundColor: Colors.transparent,
-                        overlayColor: Colors.transparent,
-                        shape: CircleBorder(),
-                        padding: EdgeInsets.all(18),
-                      ),
-                      child: Icon(
-                          Icons.search,
-                          color: Colors.black
-                      ),
-                    ),
-                  ],
-                ),
+      alignment: Alignment.topCenter,
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            ElevatedButton(
+              onPressed: (){
+                print("menu button pressed");
+              },
+              style: ElevatedButton.styleFrom(
+                elevation: 0,
+                shadowColor: Colors.transparent,
+                backgroundColor: Colors.blue,
+                foregroundColor: Colors.transparent,
+                overlayColor: Colors.transparent,
+                shape: CircleBorder(),
+                padding: EdgeInsets.all(18),
               ),
-            );
+              child: Icon(
+                Icons.menu,
+                color: Colors.black
+              ),
+            ),
+            Text(
+              "EUNOIA",
+              style: TextStyle(
+                fontSize: 34,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            ElevatedButton(
+              onPressed: (){
+                print("search button pressed");
+              },
+              style: ElevatedButton.styleFrom(
+                elevation: 0,
+                shadowColor: Colors.transparent,
+                backgroundColor: Colors.blue,
+                foregroundColor: Colors.transparent,
+                overlayColor: Colors.transparent,
+                shape: CircleBorder(),
+                padding: EdgeInsets.all(18),
+              ),
+              child: Icon(
+                  Icons.search,
+                  color: Colors.black
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 
   Align bottom_appbar() {
