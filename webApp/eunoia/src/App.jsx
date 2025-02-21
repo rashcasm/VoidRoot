@@ -1,35 +1,48 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import Login from './components/Login';
+import CbtHuman from './components/CbtHuman';
+import CbtAi from './components/CbtAi';
+import Mindfulness from './components/Mindfulness';
+import EmotionalAssessment from './components/EmotionalAssessment';
+import Chatbot from './components/Chatbot';
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+    return (
+        <Router>
+            <div>
+                <h1>Therapy App Navigation</h1>
+                <nav>
+                    <Link to="/">
+                        <button>Login</button>
+                    </Link>
+                    <Link to="/cbt-human">
+                        <button>Cognitive Behavioral Therapy (Counsellor)</button>
+                    </Link>
+                    <Link to="/cbt-ai">
+                        <button>Cognitive Behavioral Therapy (AI)</button>
+                    </Link>
+                    <Link to="/mindfulness">
+                        <button>Mindfulness Exercises</button>
+                    </Link>
+                    <Link to="/emotional-assessment">
+                        <button>Emotional Assessments</button>
+                    </Link>
+                    <Link to="/chatbot">
+                        <button>Chatbot Support</button>
+                    </Link>
+                </nav>
+                <Routes>
+                    <Route path="/" element={<Login />} />
+                    <Route path="/cbt-human" element={<CbtHuman />} />
+                    <Route path="/cbt-ai" element={<CbtAi />} />
+                    <Route path="/mindfulness" element={<Mindfulness />} />
+                    <Route path="/emotional-assessment" element={<EmotionalAssessment />} />
+                    <Route path="/chatbot" element={<Chatbot />} />
+                </Routes>
+            </div>
+        </Router>
+    );
+};
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
-
-export default App
+export default App;
