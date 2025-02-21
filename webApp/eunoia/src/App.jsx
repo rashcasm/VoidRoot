@@ -6,6 +6,7 @@ import CbtAi from './components/CbtAi';
 import Mindfulness from './components/Mindfulness';
 import EmotionalAssessment from './components/EmotionalAssessment';
 import Chatbot from './components/Chatbot';
+import HomePage from './components/HomePage';
 
 const App = () => {
     return (
@@ -39,6 +40,7 @@ const App = () => {
                     <Route path="/mindfulness" element={<Mindfulness />} />
                     <Route path="/emotional-assessment" element={<EmotionalAssessment />} />
                     <Route path="/chatbot" element={<Chatbot />} />
+                    <Route path="/home" element={<HomePage />} />
                 </Routes>
             </div>
         </Router>

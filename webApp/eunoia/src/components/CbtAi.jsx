@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import ReactMarkdown from 'react-markdown'; // Import react-markdown
 
 const CbtAi = () => {
     const [userInput, setUserInput] = useState('');
@@ -11,11 +12,12 @@ const CbtAi = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const newResponse = { user: userInput };
-        setResponses([...responses, newResponse]);
+        // Add the user's message to responses first
+        setResponses(prev => [...prev, newResponse]);
         
         // Call the API
         const apiKey = 'YOUR_API_KEY'; // Replace with your actual API key
-        const apiUrl = 'https://api.example.com/chat'; // Replace with the actual API endpoint
+        const apiUrl = 'link'; // Replace with the actual API endpoint
 
         try {
             const response = await fetch(apiUrl, {
@@ -29,7 +31,7 @@ const CbtAi = () => {
 
             const data = await response.json();
             const aiResponse = { ai: data.response }; // Adjust based on the API's response structure
-            setResponses([...responses, newResponse, aiResponse]);
+            setResponses(prev => [...prev, aiResponse]);
         } catch (error) {
             console.error('Error:', error);
         }
@@ -44,7 +46,13 @@ const CbtAi = () => {
                 {responses.map((res, index) => (
                     <div key={index}>
                         {res.user && <p><strong>You:</strong> {res.user}</p>}
-                        {res.ai && <p><strong>AI:</strong> {res.ai}</p>}
+                        {res.ai && (
+                            <div>
+                                <strong>AI:</strong>
+                                {/* Render the AI response as formatted markdown */}
+                                <ReactMarkdown>{res.ai}</ReactMarkdown>
+                            </div>
+                        )}
                     </div>
                 ))}
             </div>
