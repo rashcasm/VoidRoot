@@ -91,12 +91,20 @@ class _HomePageState extends State<HomePage> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              ElevatedButton(onPressed: null, child: Icon(Icons.home, color: Colors.black)),
+              ElevatedButton(
+                onPressed: null,
+                child: Icon(
+                  Icons.home,
+                  color: Colors.black
+                ),
+
+              ),
               IconButton(
                 onPressed: () {
                   print("search button pressed");
                 },
                 icon: Icon(Icons.search),
+
               ),
               IconButton(
                 onPressed: () {
